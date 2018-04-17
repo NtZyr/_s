@@ -1,5 +1,11 @@
 var webpack = require( 'webpack' );
 
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+var extractPlugin = new ExtractTextPlugin({
+    filename: '../style.css'
+ });
+
 module.exports = function( env ) {
     return {
         entry: ["./js/app.js", "./sass/style.scss"],
@@ -28,7 +34,19 @@ module.exports = function( env ) {
                     test: /\.otf($|\?)|\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, 
                     loader: 'url-loader'
                 }
-            ]
+            ],
+            rules: [
+                {
+                    test: /\.(scss|sass)$/,
+                    use: extractPlugin.extract({
+                        use: [ 'css-loader', 'sass-loader' ],
+                        fallback: [ 'style-loader' ]
+                    })
+                }
+            ],
         },
+        plugins: [
+            extractPlugin
+        ]
     }
 }
