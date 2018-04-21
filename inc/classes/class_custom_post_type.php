@@ -1,9 +1,11 @@
 <?php
 /**
- * Custom Post Type class
+ * Custom Post Type Class
  * 
  * @version 0.8
  */
+
+require get_template_directory() . '/inc/classes/class_meta_box_field.php'; 
 
 class Custom_Post_Type {
     public $post_type_name;
@@ -135,20 +137,22 @@ class Custom_Post_Type {
         }
     }
 
-    public function add_meta_box( $title, $fields = array(), $visible = array(), $context = 'normal', $priority = 'default' ) {
-        if( ! empty( $title ) ) {
+    public function add_meta_box( $box_meta = array(), $fields = array(), $visible = array(), $context = 'normal', $priority = 'default' ) {
+        if( !empty( $box_meta['id'] ) ) {
             // We need to know the Post Type name again
             $post_type_name = $this->post_type_name;
 
             // Meta variables
-            $box_id         = strtolower( str_replace( ' ', '_', $title ) );
-            $box_title      = ucwords( str_replace( '_', ' ', $title ) );
+            $box_id         = $box_meta['id'];
+            $box_title      = $box_meta['title'];
             $box_context    = $context;
             $box_priority   = $priority;
 
+            $this->box_id = $box_id;
+
             // Make the fields global
             global $custom_fields;
-            $custom_fields[$title] = $fields;
+            $custom_fields[ $box_meta['id'] ] = $fields;
 
             add_action( 'admin_init',
                 function() use( $box_id, $box_title, $post_type_name, $box_context, $box_priority, $fields ) {
@@ -168,11 +172,11 @@ class Custom_Post_Type {
                             $meta = get_post_custom( $post->ID );
 
                             // Check the array and loop through it
-                            if( ! empty( $custom_fields ) ) {
+                            if( !empty( $custom_fields ) ) {
                                 /* Loop through $custom_fields */
-                                foreach( $custom_fields as $label => $type ) {
+                                foreach( $custom_fields as $field_array ) {
                       
-                                    $field = new Custom_Meta_Box_Field($label, $type, $data, $meta, $custom_fields);
+                                    $field = new Custom_Meta_Box_Field( $field_array['id'], $field_array['field'], $field_array['label'], $data, $meta, $custom_fields, $field_array['optional'] );
 
                                 }
                             }
@@ -206,8 +210,8 @@ class Custom_Post_Type {
                     // Loop through each meta box
                     foreach( $custom_fields as $title => $fields ) {
                         // Loop through all fields
-                        foreach( $fields as $label => $type ) {
-                            $field_id_name  = strtolower( str_replace( ' ', '_', $title ) ) . '_' . strtolower( str_replace( ' ', '_', $label ) );
+                        foreach( $fields as $field_array ) {
+                            $field_id_name  = strtolower( str_replace( ' ', '_', $title ) ) . '_' . strtolower( str_replace( ' ', '_', $field_array['id'] ) );
 
                             update_post_meta( $post->ID, $field_id_name, (string)$_POST['custom_meta'][$field_id_name] );
                         }

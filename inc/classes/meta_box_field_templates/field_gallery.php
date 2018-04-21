@@ -1,4 +1,9 @@
 <?php
+/**
+ * Field "Gallery"
+ * 
+ * @version 0.1
+ */
     $gallery = ( isset( $meta[$field_id_name][0] ) ) ? $meta[$field_id_name][0] : '';
 ?>
 <p>
@@ -6,7 +11,7 @@
 	<div class="separator gallery_images">
 		<?php 
 			$images = ( isset( $gallery ) && '' !== $gallery ) ? explode( ',', $gallery ) : '';
-			if( ! empty( $images ) ) : 
+			if( !empty( $images ) ) : 
 		?>
 			<?php foreach( $images as $image ) : ?>
 				<div class="gallery-item" data-id="<?php esc_attr( $image ); ?>">
