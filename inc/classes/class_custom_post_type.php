@@ -22,6 +22,8 @@ class Custom_Post_Type {
         }
 
         $this->save();
+
+        add_action( 'admin_enqueue_scripts', array( $this, 'assets' ) );
     }
 
     public function register_post_type() {
@@ -219,5 +221,15 @@ class Custom_Post_Type {
                 }
             }
         );
+    }
+
+    public function assets( $hook ) {
+        // var_dump( $hook ); // check $hook
+        switch( $hook ) {
+            case 'post-new.php':
+            case 'post.php':
+                wp_enqueue_script( 'field-gallery', get_template_directory_uri() . '/js/admin/gallery.js' );
+                break;
+        }
     }
 }
