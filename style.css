@@ -1,10 +1,11 @@
+@charset "UTF-8";
 /*!
 Theme Name: Codein Theme
 Theme URI: https://underscores.me/
 Author: Codein Team ft. Automattic
 Author URI: https://automattic.com/
-Description: This theme it is combination of Underscores Starter Theme for Wordpress and Wordpress-development solutions of Codein Team.
-Version: 1.0
+Description: This theme it is combination of Underscores Starter Theme for Wordpress and web-development solutions of Codein Team.
+Version: under0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: codein_theme
@@ -19,25 +20,54 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
+# Imports
+# Globals
+# Grid
+# Atoms
+    # Typogaphy
+
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-# Susy & Breakpoint
+# Imports
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Globals
+--------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0; }
+
+/*--------------------------------------------------------------
+# Grid Settings
+--------------------------------------------------------------*/
+/**
+ * GRID COL
+ * 
+ * $num: [number] – width of element (you may use 'susy-span' params from Susy, but it will not work correct
+ * $container_type: [col|container|row]
+ */
+* {
+  margin: 0;
+  padding: 0; }
+
+/*--------------------------------------------------------------
+# Atoms
+--------------------------------------------------------------*/
+/**
+ * Color Pallete
+ */
+/*
+    Headings
+*/
+/*
+    Paragraphs
+*/
+/*
+    Links
+*/
+/*
+    Labels
+*/
+/*
+    Other
+*/

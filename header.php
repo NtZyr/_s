@@ -21,6 +21,10 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+	// require 'grid-test.php';
+?>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'codein_theme' ); ?></a>
 

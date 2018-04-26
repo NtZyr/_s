@@ -1,3 +1,5 @@
 node_modules
 _README.md
 _sass
+inc/custom_post_type.php
+grid-test.php
