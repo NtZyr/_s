@@ -1,0 +1,45 @@
+// Presetting grid
+$module: 8px;
+$column-gutter: 16px;
+$column-counter: 12;
+$column-width: 48px;
+$container-width: 960px;
+
+// Susy Settings
+$susy: (
+    'columns': susy-repeat( $column-counter, $column-width ),
+    'gutters': $column-gutter * 2,
+    'spread': 'narrow',
+    'container-spread': 'narrow',
+);
+
+/**
+ * GRID COL
+ * 
+ * $num: [number] – width of element (you may use 'susy-span' params from Susy, but it will not work correct
+ * $container_type: [col|container|row]
+ */
+@mixin grid-col( $num, $container_type: col ) {
+    height: 48px; // to del
+    box-sizing: border-box;
+
+    // Separate 
+    @if $container_type == 'container' {
+        margin: auto;
+        width: span( $num wide );
+        clear: both;
+        overflow: hidden;
+    } @else if $container_type == 'col' {
+        margin-left: $column-gutter;
+        margin-right: $column-gutter;
+        width: span( $num );
+        float: left;
+    }
+}
+
+// some reset, need to relocate
+
+* {
+    margin: 0;
+    padding: 0;
+}

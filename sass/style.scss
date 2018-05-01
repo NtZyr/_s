@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*!
 Theme Name: Codein Theme
 Theme URI: https://underscores.me/
@@ -17,6 +16,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 Codein Theme is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -27,47 +27,26 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     # Typogaphy
 
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Imports
 --------------------------------------------------------------*/
+@import "~susy/sass/susy";
+@import "~breakpoint-sass/stylesheets/breakpoint";
+
 /*--------------------------------------------------------------
 # Globals
 --------------------------------------------------------------*/
-* {
-  margin: 0;
-  padding: 0; }
+@import 'global/resets';
+@import 'global/mixins';
 
 /*--------------------------------------------------------------
 # Grid Settings
 --------------------------------------------------------------*/
-/**
- * GRID COL
- * 
- * $num: [number] – width of element (you may use 'susy-span' params from Susy, but it will not work correct
- * $container_type: [col|container|row]
- */
-* {
-  margin: 0;
-  padding: 0; }
+@import 'grid';
 
 /*--------------------------------------------------------------
 # Atoms
 --------------------------------------------------------------*/
-/**
- * Color Pallete
- */
-/*
-    Headings
-*/
-/*
-    Paragraphs
-*/
-/*
-    Links
-*/
-/*
-    Labels
-*/
-/*
-    Other
-*/
+@import 'atoms/colors';
+@import 'atoms/typography';
