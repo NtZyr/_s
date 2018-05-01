@@ -4,7 +4,6 @@
  * 
  * @version 0.8
  */
-
 require get_template_directory() . '/inc/classes/class_meta_box_field.php'; 
 
 class Custom_Post_Type {

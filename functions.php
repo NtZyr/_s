@@ -168,4 +168,9 @@ if ( class_exists( 'WooCommerce' ) ) {
 /**
  * Load CPT
  */
-require get_template_directory() . '/inc/custom_post_type.php';
+require get_template_directory() . '/inc/custom_post_types.php';
+
+/**
+ * Load CPT
+ */
+require get_template_directory() . '/inc/custom_shortcodes.php';
