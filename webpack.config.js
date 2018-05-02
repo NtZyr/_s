@@ -29,10 +29,6 @@ module.exports = function( env ) {
                     test: /\.scss$/, 
                     loader: "style-loader!css-loader!sass-loader", 
                     exclude: /node_modules/
-                },
-                {
-                    test: /\.otf($|\?)|\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, 
-                    loader: 'url-loader'
                 }
             ],
             rules: [
@@ -42,6 +38,13 @@ module.exports = function( env ) {
                         use: [ 'css-loader', 'sass-loader' ],
                         fallback: [ 'style-loader' ]
                     })
+                },
+                {
+                    test: /\.(woff|woff2|eot|ttf|svg)$/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: 'url-loader?limit=1024&name=../fonts/[name].[ext]'
+                    }
                 }
             ],
         },
