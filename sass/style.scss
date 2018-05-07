@@ -1,36 +1,7 @@
-/*!
-Theme Name: Codein Theme
-Theme URI: https://underscores.me/
-Author: Codein Team ft. Automattic
-Author URI: https://automattic.com/
-Description: This theme it is combination of Underscores Starter Theme for Wordpress and web-development solutions of Codein Team.
-Version: under0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: codein_theme
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Codein Theme is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-*/
-
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Imports
-# Globals
-# Grid
-# Atoms
-    # Typogaphy
-
---------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 # Imports
 --------------------------------------------------------------*/
+@import 'header.css';
 @import '~modern-normalize/modern-normalize.css';
 @import "~susy/sass/susy";
 @import "~breakpoint-sass/stylesheets/breakpoint";
