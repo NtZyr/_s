@@ -8,7 +8,10 @@ var extractPlugin = new ExtractTextPlugin({
 
 module.exports = function( env ) {
     return {
-        entry: ["./js/app.js", "./sass/style.scss"],
+        entry: {
+            js: "./src/js/app.js", 
+            sass: "./src/sass/style.scss"
+        },
         output: {
             path: __dirname + "/dist",
             filename: "bundle.js"
@@ -24,11 +27,6 @@ module.exports = function( env ) {
                     test: /\.css$/, 
                     loader: "style-loader!css-loader", 
                     exclude: /node_modules/
-                },
-                {
-                    test: /\.scss$/, 
-                    loader: "style-loader!css-loader!sass-loader", 
-                    exclude: /node_modules/
                 }
             ],
             rules: [
@@ -42,9 +40,7 @@ module.exports = function( env ) {
                 {
                     test: /\.(woff|woff2|eot|ttf|svg)$/,
                     exclude: /node_modules/,
-                    use: {
-                        loader: 'url-loader?limit=1024&name=../fonts/[name].[ext]'
-                    }
+                    loader: 'url-loader'
                 }
             ],
         },
