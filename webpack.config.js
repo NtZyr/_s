@@ -10,7 +10,7 @@ module.exports = function( env ) {
     return {
         entry: ["./js/app.js", "./sass/style.scss"],
         output: {
-            path: __dirname + "./dist",
+            path: __dirname + "/dist",
             filename: "bundle.js"
         },
         module: {
