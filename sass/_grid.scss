@@ -19,14 +19,18 @@ $susy: (
  * $num: [number] – width of element (you may use 'susy-span' params from Susy, but it will not work correct
  * $container_type: [col|container|row]
  */
-@mixin grid-col( $num, $container_type: col ) {
-    height: 48px; // to del
+ @mixin grid-col( $num, $container_type: col ) {
     box-sizing: border-box;
 
-    // Separate 
     @if $container_type == 'container' {
         margin: auto;
         width: span( $num wide );
+        @include breakpoint( $sm $md ) {
+            width: span( ( $num - $column_response-step * 2) wide );
+        }
+        @include breakpoint( $md $lg ) {
+            width: span( ( $num - $column_response-step ) wide );
+        }
         clear: both;
         overflow: hidden;
     } @else if $container_type == 'col' {
@@ -34,12 +38,16 @@ $susy: (
         margin-right: $column-gutter;
         width: span( $num );
         float: left;
+    } @else if $container_type == 'incontainer' {
+        margin: auto;
+        width: span( $num );
+        @include breakpoint( $sm $md ) {
+            width: span( ( $num - $column_response-step * 2) );
+        }
+        @include breakpoint( $md $lg ) {
+            width: span( ( $num - $column_response-step ) );
+        }
+        clear: both;
+        overflow: hidden;
     }
-}
-
-// some reset, need to relocate
-
-* {
-    margin: 0;
-    padding: 0;
 }
