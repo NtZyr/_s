@@ -8,12 +8,9 @@ var extractPlugin = new ExtractTextPlugin({
 
 module.exports = function( env ) {
     return {
-        entry: {
-            js: "./src/js/app.js", 
-            sass: "./src/sass/style.scss"
-        },
+        entry: ["./js/app.js", "./sass/style.scss"],
         output: {
-            path: __dirname + "/dist",
+            path: __dirname + "./dist",
             filename: "bundle.js"
         },
         module: {
