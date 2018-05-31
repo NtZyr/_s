@@ -4,6 +4,12 @@ $column-gutter: 16px;
 $column-counter: 12;
 $column-width: 48px;
 $container-width: 960px;
+$column_response-step: 4;
+
+// Responsive
+$sm: 288px;
+$md: 654px;
+$lg: 976px;
 
 // Susy Settings
 $susy: (
