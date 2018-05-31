@@ -145,3 +145,8 @@ function codein_theme_post_thumbnail() {
 	<?php endif; // End is_singular().
 }
 endif;
+
+/**
+ * Additional Tags
+ */
+// require 'include_tags/file.php';
