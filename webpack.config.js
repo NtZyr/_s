@@ -8,30 +8,25 @@ var extractPlugin = new ExtractTextPlugin({
 
 module.exports = function( env ) {
     return {
-        entry: ["./js/app.js", "./sass/style.scss"],
+        entry: ["./js/app.js", "./scss/style.scss"],
         output: {
             path: __dirname + "/dist",
             filename: "bundle.js"
         },
         module: {
-            loaders: [
-                {
-                    test: /\.html$/, 
-                    loader: 'raw-loader', 
-                    exclude: /node_modules/
-                },
-                {
-                    test: /\.css$/, 
-                    loader: "style-loader!css-loader", 
-                    exclude: /node_modules/
-                }
-            ],
             rules: [
                 {
                     test: /\.(scss|sass)$/,
                     use: extractPlugin.extract({
                         use: [ 'css-loader', 'sass-loader' ],
                         fallback: [ 'style-loader' ]
+                    })
+                },
+                {
+                    test: /\.css$/,
+                    use: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: ['css-loader']
                     })
                 },
                 {
@@ -42,7 +37,9 @@ module.exports = function( env ) {
             ],
         },
         plugins: [
-            extractPlugin
+            new ExtractTextPlugin(
+                {filename: 'style.css'}
+            )
         ]
     }
 }
