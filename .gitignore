@@ -17,3 +17,4 @@ dist
 src/**/
 assets/admin/**/
 assets/front/**/
+inc/api/**/

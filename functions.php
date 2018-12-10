@@ -120,8 +120,8 @@ add_action('widgets_init', 'codein_theme_widgets_init');
 /**
  * Enqueue scripts and styles.
  */
-require get_template_directory() . 'assets/front/assets.php';
-require get_template_directory() . 'assets/admin/assets.php';
+require get_template_directory() . '/assets/front/assets.php';
+require get_template_directory() . '/assets/admin/assets.php';
 
 /**
  * Implement the Custom Header feature.

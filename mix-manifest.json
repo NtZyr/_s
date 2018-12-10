@@ -1,7 +1,4 @@
 {
     "/assets/front/js/app.js": "/assets/front/js/app.js",
-    "/assets/front/css/style.css": "/assets/front/css/style.css",
-    "/assets/front/js/skip-link-focus-fix.js": "/assets/front/js/skip-link-focus-fix.js",
-    "/assets/front/js/navigation.js": "/assets/front/js/navigation.js",
-    "/assets/front/js/customizer.js": "/assets/front/js/customizer.js"
+    "/assets/front/css/style.css": "/assets/front/css/style.css"
 }
