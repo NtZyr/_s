@@ -11,3 +11,9 @@ css
 js
 .DS_Store
 functions.php
+dist
+.DS_Store
+**/.DS_Store
+src/**/
+assets/admin/**/
+assets/front/**/

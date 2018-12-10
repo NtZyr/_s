@@ -4,7 +4,10 @@
   "description": "_s theme fork using Webpack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -17,17 +20,19 @@
   },
   "homepage": "https://github.com/NtZyr/codein_theme#readme",
   "devDependencies": {
+    "axios": "^0.18.0",
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
+    "laravel-mix": "^3.0.0",
     "node-sass": "^4.9.3",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.7",
     "script-loader": "^0.7.2",
     "style-loader": "^0.20.3",
     "url-loader": "^0.6.2",
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0"
+    "vue": "^2.5.19",
+    "webpack": "^3.11.1"
   },
   "dependencies": {
     "breakpoint-sass": "^2.7.1",
