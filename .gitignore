@@ -1,7 +1,6 @@
 node_modules
 _README.md
 _sass
-inc/custom_post_type.php
 scss
 fonts
 img
@@ -9,12 +8,8 @@ imgs
 images
 css
 js
-.DS_Store
-functions.php
 dist
-.DS_Store
 **/.DS_Store
 src/**/
 assets/admin/**/
 assets/front/**/
-inc/api/**/

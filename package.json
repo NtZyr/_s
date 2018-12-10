@@ -25,13 +25,18 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "laravel-mix": "^3.0.0",
+    "lodash": "^4.17.11",
     "node-sass": "^4.9.3",
+    "popper.js": "^1.14.6",
+    "qs": "^6.6.0",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.7",
     "script-loader": "^0.7.2",
     "style-loader": "^0.20.3",
     "url-loader": "^0.6.2",
     "vue": "^2.5.19",
+    "vue-loader": "^14.2.2",
+    "vue-template-compiler": "^2.5.19",
     "webpack": "^3.11.1"
   },
   "dependencies": {
